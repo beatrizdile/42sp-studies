@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 10:51:00 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/06/01 16:24:41 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/07/28 15:29:44 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	print(char	*placeholders, ...)
 
 int main(void)
 {
-	printf("max: %d\n\n", max(4, 5, 8, 2, 7));
+	printf("max: %d\n", max(4, 5, 8, 2, 7));
 	print("df", 10, 3.4);
 	return (0);
 }
