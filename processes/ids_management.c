@@ -7,7 +7,8 @@
 #include <errno.h>
 
 // The wait() function only waits for one child process
-// Our parent here has two children to wait for
+// Our parent here has two children to wait for,
+// so we put it in a while loop to fix it
 
 int	main(int argc, char **argv)
 {
