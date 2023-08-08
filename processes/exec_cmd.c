@@ -3,6 +3,7 @@
 #include <unistd.h>
 #include <time.h>
 #include <sys/wait.h>
+#include <fcntl.h>
 
 int	main(int argc, char **argv)
 {
@@ -12,7 +13,12 @@ int	main(int argc, char **argv)
 	}
 	if (pid == 0) {
 		// Child process
-		int	err = execlp("ping", "ping", "-c", "3", "google.con", NULL);
+		int	file = open("ping-results.txt", O_WRONLY | O_CREAT, 0777);
+		printf("The fd to ping-results.txt: %d\n", file);
+		dup2(file, STDOUT_FILENO);
+		close(file);
+	
+		int	err = execlp("ping", "ping", "-c", "3", "google.com", NULL);
 		if (err == -1) {
 			printf("Could not find program to execute!\n");
 			return (2);
