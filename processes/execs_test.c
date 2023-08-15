@@ -20,7 +20,7 @@
 
 int	main(int argc, char **argv, char *env[])
 {
-	char *const	arr[] = {"env", NULL, NULL};
+	//char *const	arr[] = {"env", NULL, NULL};
 	// char *const	arr[] = {"ping", "google.com", NULL};
 
 	// execl("/usr/bin/ping",
@@ -36,12 +36,12 @@ int	main(int argc, char **argv, char *env[])
 	// execvp("ping",
 	// 		arr);
 
-	execvpe("env", arr, env);
+	//execvpe("env", arr, env);
 
-	// while(env) {
-	// 	printf("%s\n", *env);
-	// 	env++;
-	// }
+	while(*env) {
+		printf("%s\n", *env);
+		env++;
+	}
 
 	printf("Exec was not executed.\n");
 	return (0);
