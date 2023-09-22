@@ -49,8 +49,8 @@ int	handle_keyrelease(int keysym, t_data *data)
 
 int	handle_x_press(t_data *data)
 {
-    mlx_destroy_window(data->mlx_ptr, data->win_ptr);
     mlx_destroy_image(data->mlx_ptr, data->img);
+    mlx_destroy_window(data->mlx_ptr, data->win_ptr);
     return (0);
 }
 
@@ -85,3 +85,5 @@ int	main(void)
     mlx_destroy_display(data.mlx_ptr); // kills connection to server, doesn't free
     free(data.mlx_ptr);
 }
+
+//-lmlx -lXext -lX11
