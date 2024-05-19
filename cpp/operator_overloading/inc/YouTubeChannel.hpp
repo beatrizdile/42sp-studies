@@ -10,6 +10,7 @@ class YouTubeChannel
 		YouTubeChannel(std::string channelName, int subscribers);
 		YouTubeChannel(YouTubeChannel& other);
 		~YouTubeChannel();
+		YouTubeChannel& operator=(YouTubeChannel& channel);
 
 		std::string 		name;
 		int					numOfSubs;
@@ -24,6 +25,7 @@ class YouTubeChannel
 	
 };
 
+
 std::ostream& operator<<(std::ostream& os, YouTubeChannel& channel);
 
 YouTubeChannel::YouTubeChannel(){};
@@ -31,8 +33,15 @@ YouTubeChannel::YouTubeChannel(){};
 YouTubeChannel::YouTubeChannel(std::string channelName, int subscribers) : name(channelName), numOfSubs(subscribers){};
 
 YouTubeChannel::YouTubeChannel(YouTubeChannel& other){
-	this->name = other.getName();
-	this->numOfSubs = other.getNumOfSubs();
+	*this = other;
+};
+
+YouTubeChannel& YouTubeChannel::operator=(YouTubeChannel& channel){
+	if (this != &channel){
+		this->name = channel.getName();
+		this->numOfSubs = channel.getNumOfSubs();
+	}
+	return *this;
 };
 
 YouTubeChannel::~YouTubeChannel(){}
