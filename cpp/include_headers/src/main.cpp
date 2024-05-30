@@ -2,5 +2,5 @@
 
 int main()
 {
-	std::cout << "Helo World!" << std::endl;
+	std::cout << "Hello World!" << std::endl;
 #include "Header.hpp"
