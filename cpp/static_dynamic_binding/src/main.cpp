@@ -22,6 +22,8 @@ void myFunction(Base *base)
 	base->fun();
 }
 
+// The decision of which function to call (the base or derived func) is made at
+// runtime, so this is called dynamic binding.
 int main()
 {
 	myFunction(new Base());
