@@ -52,7 +52,7 @@ int main()
 		// cout << word.at(4) << endl;
 		// int *array = new int[999999999999999];
 		// array[0] = 1;
-		// throw custom_exception();
+		throw custom_exception();
 		// throw 20;
 		// throw 5.4;
 		myFunction();
