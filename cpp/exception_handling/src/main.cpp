@@ -13,6 +13,7 @@ class custom_exception : public exception
 void myFunction2(){
 	// throw 5.4;
 	throw custom_exception();
+	cout << "This line will not be executed" << endl;
 };
 
 void myFunction()
@@ -56,6 +57,7 @@ int main()
 		// throw 20;
 		// throw 5.4;
 		myFunction();
+		cout << "This line will not be executed" << endl;
 	}
 	catch(out_of_range& e) // This catches out_of_range type exceptions
 	{
@@ -65,13 +67,13 @@ int main()
 	{
 		std::cerr << "Second Catch: " << e.what() << endl;
 	}
-	catch(exception& e) // This class encompasses all exceptions
-	{
-		std::cerr << "Exception thrown: " << e.what() << endl;
-	}
 	catch(int code) // This catches all exceptions in a last case scenario
 	{
 		std::cerr << "Error code: " << code << endl;
+	}
+	catch(exception& e) // This class encompasses all exceptions
+	{
+		std::cerr << "Exception thrown: " << e.what() << endl;
 	}
 	catch(...) // This catches all exceptions in a last case scenario
 	{
@@ -88,6 +90,8 @@ int main()
 		// 		|			|			|
 		// logic error	 bad_alloc	 runtime_error
 		// out_of_range
+
+	cout << "Program continues after thrown..." << endl;
 
 	return 0;
 }
