@@ -11,8 +11,8 @@ Warlock& Warlock::operator=(const Warlock& other) {
 	if (this == &other)
 		return *this;
 	
-	this->name = other.name;
-	this->title = other.title;
+	this->name = other.getName();
+	this->title = other.getTitle();
 	return *this;
 }
 
